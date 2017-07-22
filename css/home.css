@@ -22,3 +22,12 @@ footer  {
 .img-color {
     background-color: rgb(238, 37, 122);
 }
+
+.jumbotron {
+    background-image: url("../img/banner.jpg");
+    background-size: cover;
+}
+
+.btn-secundary {
+    background-color: rgb(238, 37, 122);
+}
