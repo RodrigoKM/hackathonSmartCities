@@ -1,0 +1,24 @@
+body {
+    font-family: 'Open Sans', sans-serif;
+    padding-bottom: 3rem;
+}
+
+footer  {
+    
+}
+
+.featurette-divider {
+    margin: 5rem 0;
+}
+
+.primary-color {
+    color: rgb(25, 49, 121);
+}
+
+.secundary-color {
+    color: rgb(238, 37, 122);
+}
+
+.img-color {
+    background-color: rgb(238, 37, 122);
+}
