@@ -1,3 +1,27 @@
+<?php
+
+  include "bdc.php";
+  //include "val.php";
+ //include "validarNivel.php";
+  
+  
+  if(isset($_POST['cadastro'])){
+    $nome = $_POST["nome"];
+    $email = $_POST["email"];
+    $areaInteresse = $_POST["areaInteresse"];
+    $cidade = $_POST["cidade"];
+      
+    $sql = "INSERT INTO `usuario`( `nm_usuario`, `nm_email`, `id_area`, `nm_cidade`) VALUES ('{$nome}','{$email}','{$areaInteresse}','{$cidade}')";
+    
+	$sql = mysql_query($sql);
+  }
+  
+  //query
+ //  $area = "SELECT * FROM `area`;";
+//	$res = mysql_query($area);
+	
+
+?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -15,14 +39,14 @@
 
     <div class="jumbotron img-responsive">
         <div class="container">
-            <br> <br> <br> <br> <br> <br> <br> <br> <br> <br> <br> <br> <br> <br> <br> <br>
+            <br> <br>  <br> <br> <br> <br> <br> <br> <br> <br>  <br> <br> <br> <br> <br> <br>    
             <div class="col-xs-offset-10 col-sm-offset-10 col-md-offset-10 col-lg-offset-10 position">
                 <p>
                     <a class="btn btn-secundary btn-lg show-button">Learn more</a>
                 </p>
             </div>
 
-            <br> <br> <br> <br> <br> <br>
+             <br> <br> <br> <br> <br> <br>
         </div>
     </div>
 
@@ -47,8 +71,8 @@
         <div class="row">
             <div class="col-lg-4">
                 <div class="text-center">
-                    <img class="img-circle img-color" src="img/viagem.jpg" alt="Generic placeholder image" width="140" height="140">
-                    <h2>Primeiro</h2>
+                    <img class="img-circle img-color" src="img/aviao.png" alt="Generic placeholder image" width="140" height="140">
+                    <h2>Heading</h2>
                     <p>Donec sed odio dui. Etiam porta sem malesuada magna mollis euismod. Nullam id dolor id nibh ultricies
                         vehicula ut id elit. Morbi leo risus, porta ac consectetur ac, vestibulum at eros. Praesent commodo
                         cursus magna.</p>
@@ -57,8 +81,8 @@
             <!-- /.col-lg-4 -->
             <div class="col-lg-4">
                 <div class="text-center">
-                    <img class="img-circle img-color" src="img/show.jpg" alt="Generic placeholder image" width="140" height="140">
-                    <h2>Segundo</h2>
+                    <img class="img-circle img-color" src="img/aviao.png" alt="Generic placeholder image" width="140" height="140">
+                    <h2>Heading</h2>
                     <p>Duis mollis, est non commodo luctus, nisi erat porttitor ligula, eget lacinia odio sem nec elit. Cras
                         mattis consectetur purus sit amet fermentum. Fusce dapibus, tellus ac cursus commodo, tortor mauris
                         condimentum nibh.
@@ -68,8 +92,8 @@
             <!-- /.col-lg-4 -->
             <div class="col-lg-4">
                 <div class="text-center">
-                    <img class="img-circle img-color " src="img/curso.jpg" alt="Generic placeholder image" width="140" height="140">
-                    <h2>Terceiro</h2>
+                    <img class="img-circle img-color " src="img/aviao.png" alt="Generic placeholder image" width="140" height="140">
+                    <h2>Heading</h2>
                     <p>Donec sed odio dui. Cras justo odio, dapibus ac facilisis in, egestas eget quam. Vestibulum id ligula
                         porta felis euismod semper. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh,
                         ut fermentum massa justo sit amet risus.</p>
@@ -111,31 +135,42 @@
 
         <div class="row">
             <div class="col-md-offset-3 col-md-6">
-                <form action="" method="POST" role="form">
+			<form name="cadastro" action = "#" method="post" id="formulario" role="form">
+              
                     <legend>
                         <h2 class="primary-color">Inscreva-se</h2>
                     </legend>
 
                     <div class="form-group">
                         <label for="nome">Nome</label>
-                        <input type="text" class="form-control" id="nome" placeholder="Nome">
+                        <input type="text" class="form-control" name="nome" id="nome" placeholder="Nome">
                     </div>
 
                     <div class="form-group">
                         <label for="email">Email</label>
-                        <input type="text" class="form-control" id="email" placeholder="Email">
+                        <input type="text" class="form-control" name="email" id="email" placeholder="Email">
                     </div>
 
                     <div class="form-group">
                         <label for="cidade">Cidade</label>
-                        <input type="text" class="form-control" id="cidade" placeholder="Cidade">
+                        <input type="text" class="form-control" name="cidade" id="cidade" placeholder="Cidade">
                     </div>
 
                     <div class="form-group">
-                        <label for="areaDeInteresse">Area De Interesse</label>
-                        <input type="input" class="form-control" id="areaDeInteresse" placeholder="Area De Interesse">
+										<label  for="areaDeInteresse"> Area De Interesse</label>									
+										 <select class="form-control" type="text" class="input" name="areaInteresse"  >
+										 <option value="1">Designer</option>
+										 <option value="2">Programador</option>
+										 <option value="3">Vendas</option>
+										 <option value="4">Markting</option>
+										 </select>
                     </div>
-                    <a type="button" class="btn btn-secundary btn-block" data-toggle="modal" href="#modal-id">Inscreva-se</a>
+
+
+										 
+				
+                    <button name="cadastro" value="Cadastrar" type="submit" class="btn btn-primary btn-block" onClick="alertInfo()">Inscreva-se</button>
+
                 </form>
             </div>
         </div>
@@ -143,7 +178,13 @@
         <hr class="featurette-divider">
     </div>
     
-    <div class="modal fade" id="modal-id">
+    <footer class="footer">
+        <div class="container">
+            <span class="text-muted">footer</span>
+        </div>
+    </footer>
+	
+	  <div class="modal fade" id="modal-id">
         <div class="modal-dialog">
             <div class="modal-content">
                 <div class="modal-header">
@@ -158,35 +199,6 @@
             </div>
         </div>
     </div>
-    
-
-    <footer class="footer">
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-4">
-                    <div class="text-center">
-                        <img class="img-responsive img-color" src="img/gama-logo.jpg" alt="Generic placeholder image" width="140" height="140">
-                    </div>
-                </div>
-                <!-- /.col-lg-4 -->
-                <div class="col-lg-4">
-                    <div class="text-center">
-                        <img class="img-responsive img-color" src="img/lewagon.jpg" alt="Generic placeholder image" width="140" height="140">
-                    </div>
-                </div>
-                <!-- /.col-lg-4 -->
-                <div class="col-lg-4">
-                    <div class="text-center">
-                        <img class="img-responsive img-color " src="img/wired.jpg" alt="Generic placeholder image" width="140" height="140">
-                    </div>
-                </div>
-                <!-- /.col-lg-4 -->
-            </div>
-        </div>
-    </footer>
-
-    <script src="bower_components/jquery/dist/jquery.js"></script>
-    <script src="bower_components/bootstrap/dist/js/bootstrap.js"></script>
 </body>
 
 </html>
