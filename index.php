@@ -102,7 +102,6 @@
             <!-- /.col-lg-4 -->
         </div>
 
-
         <hr class="featurette-divider">
 
         <h2 class="text-center featurette-divider primary-color">Quem já participou</h2>
@@ -165,19 +164,13 @@
 										 <option value="4">Markting</option>
 										 </select>
                     </div>
-
-
-										 
-				
                     <button name="cadastro" value="Cadastrar" type="submit" class="btn btn-primary btn-block" onClick="alertInfo()">Inscreva-se</button>
-
                 </form>
             </div>
         </div>
-
         <hr class="featurette-divider">
     </div>
-    
+
     <footer class="footer">
         <div class="container">
             <span class="text-muted">footer</span>
